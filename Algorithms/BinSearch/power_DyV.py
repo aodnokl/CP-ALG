@@ -5,17 +5,17 @@
 #
 # Given a value `a` (which satisfies the associative property) and a non-negative 
 # integer `n`, calculate the power a^n[cite: 1]. 
-# A naive iterative scheme multiplying `a` sequentially takes a linear cost of \Theta(n), 
-# but we can leverage exponent properties to achieve a logarithmic runtime complexity of \Theta(\log n)[cite: 1].
+# A naive iterative scheme multiplying `a` sequentially takes a linear cost of O(n), 
+# but we can leverage exponent properties to achieve a logarithmic runtime complexity of O(log n).
 #
 # Core Properties of Binary Exponentiation for this Problem:
 # Mastering this variant involves divide-and-conquer and exponent rules:
-# 1. Exponent Property: Exploiting the rule a^n \times a^m = a^(n+m) to break down the problem[cite: 1].
+# 1. Exponent Property: Exploiting the rule a^n \times a^m = a^(n+m) to break down the problem.
 # 2. Base Cases: If n == 0, return 1; if n == 1, return `a` directly.
-# 3. Even Exponent: If `n` is even (n % 2 == 0), compute aux = power(a, n // 2) and return aux * aux[cite: 1].
-# 4. Odd Exponent: If `n` is odd, compute aux = power(a, n // 2) and return aux * aux * a[cite: 1].
+# 3. Even Exponent: If `n` is even (n % 2 == 0), compute aux = power(a, n // 2) and return aux * aux.
+# 4. Odd Exponent: If `n` is odd, compute aux = power(a, n // 2) and return aux * aux * a.
 # 5. Logarithmic Cost: Halving the exponent at each step results in the recurrence 
-#    relation T(n) = T(n/2) + k', yielding an overall cost of \Theta(\log n)[cite: 1].
+#    relation T(n) = T(n/2) + k', yielding an overall cost of O(log n).
 
 from typing import Any, Union
 
